@@ -20,3 +20,16 @@ mvn clean package
 java -jar target/spring-boot-with-jms-1.0-SNAPSHOT.jar
 ```
 
+## Options
+
+You may provide a profile as system parameter to run as sender or receiver
+(The default config uses sender and receiver at the same time).
+```
+java -jar -Dspring.profiles.active=sender target/spring-boot-with-jms-1.0-SNAPSHOT.jar
+```
+
+You can configure the send.rate for a sender and the processing.time of a receiver
+by appending "--send.rate=<value in ms>" and "--processing.time=<value in ms>"
+at the end of the command.
+
+
