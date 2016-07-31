@@ -30,12 +30,14 @@ public class Sender {
     public void send() {
         System.out.println("Sending a new message...");
         //jmsTemplate.send("mailbox-destination", session -> session.createTextMessage("ping!"));
-        jmsTemplate.send("mailbox-destination", new MessageCreator() {
-            @Override
-            public Message createMessage(Session session) throws JMSException {
-                return simpleMessageConverter.toMessage(new MyMessage("Thofis", "Here it comes."), session);
-            }
-        });
+        jmsTemplate.send("mailbox-destination", (Session session) -> simpleMessageConverter.toMessage(new MyMessage("Thofis", "Here it comes."), session));
+
+//        jmsTemplate.send("mailbox-destination", new MessageCreator() {
+//            @Override
+//            public Message createMessage(Session session) throws JMSException {
+//                return simpleMessageConverter.toMessage(new MyMessage("Thofis", "Here it comes."), session);
+//            }
+//        });
     }
 
 }
