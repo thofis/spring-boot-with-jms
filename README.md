@@ -29,7 +29,7 @@ java -jar -Dspring.profiles.active=sender target/spring-boot-with-jms-1.0-SNAPSH
 ```
 
 You can configure the send.rate for a sender and the processing.time of a receiver
-by appending "--send.rate=<value in ms>" and "--processing.time=<value in ms>"
+by appending "--send.rate=|value in ms|" and "--processing.time=|value in ms|"
 at the end of the command.
 
 
